@@ -78,6 +78,8 @@ void send_event(string ev) {
     if(result.status != 0) {
       stderr.writeln("Error: ", optCommand, " exited with ", result.status);
       stderr.writeln(result.output);
+    } else if(optVerbose) {
+      write(result.output);
     }
   }
 }
